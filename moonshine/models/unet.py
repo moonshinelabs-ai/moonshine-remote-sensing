@@ -11,6 +11,9 @@ from smart_open import open
 
 from public.moonshine.moonshine.models.base import MoonshineModel
 
+weight_mapping = {
+    "fmow_rgb": "https://moonshine-prod-models.s3.us-west-2.amazonaws.com/moonshine/unet/unet50_fmow_3chan_step268380.pt"
+}
 
 class UNet50(MoonshineModel):
     def __init__(self, weights: Optional[str], input_channels: int = 12):
@@ -27,18 +30,21 @@ class UNet50(MoonshineModel):
 
         # If passed, load pretrained weights for the backbone unet.
         if weights:
-            with open(weights, "rb") as f:
-                buffer = io.BytesIO(f.read())
-                state_dict = torch.load(buffer)
-                logger.info("State dict file opened, attempt parsing...")
-            new_dict = {}
-            for k, v in state_dict.items():
-                if "unet" in k and "encode" in k:
-                    new_key = k.replace("model.", "")
-                    new_dict[new_key] = v
-            self.load_state_dict(new_dict, strict=False)
+            if weights in weight_mapping.keys():
+                logger.info(f"Got pretrained weights, going to load from moonshine")
+                url = weight_mapping[weights]
+                self.load_weights(url)
+                logger.info(f"Loaded state dict for {weights}")
+            elif ".pt" in weights:
+                logger.info(f"Got custom weights, going to load from path {weights}")
+                self.load_weights(weights)
+                logger.info(f"Loaded state dict for {weights}")
+            else:
+                logger.error(f"Invalid weights, either specify a path or {weight_mapping.keys()}")
+                raise Exception("Not a valid weights specification or path.")
+        else:
+            logger.info("No weights passed, starting from blank network.")
 
-            logger.info(f"Loaded state dict for {weights}")
 
     def forward(self, x):
         return self.unet(x)

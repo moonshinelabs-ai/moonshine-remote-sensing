@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "moonshine"
+version = "0.1.0"
+authors = [
+    {name = "Nate Harada", email = "moonshine@moonshinelabs.ai"},
+]
+description = "Pretrained remote sensing models."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+keywords = ["moonshine", "remote", "sensing", "satellite"]
+license = {text = "MIT"}
+dependencies = [
+    "torch",
+]
+
+[project.urls]
+Homepage = "https://github.com/moonshinelabs/moonshine"

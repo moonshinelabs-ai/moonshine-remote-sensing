@@ -1,6 +1,7 @@
 import abc
 
 import torch.nn as nn
+from torch.utils.model_zoo import load_url
 
 
 class MoonshineModel(nn.Module, abc.ABC):
@@ -10,6 +11,16 @@ class MoonshineModel(nn.Module, abc.ABC):
         super().__init__()
 
         self.model_name = "unnamed"
+
+    def load_weights(self, weights: str):
+        state_dict = load_url(weights)
+        new_dict = {}
+        for k, v in state_dict.items():
+            if "unet" in k and "encode" in k:
+                new_key = k.replace("model.", "")
+                new_dict[new_key] = v
+
+        self.load_state_dict(new_dict, strict=False)
 
     def num_params(self):
         trainable_params = 0
