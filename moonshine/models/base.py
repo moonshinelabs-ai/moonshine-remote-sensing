@@ -12,13 +12,18 @@ class MoonshineModel(nn.Module, abc.ABC):
 
         self.model_name = "unnamed"
 
-    def load_weights(self, weights: str):
+    def load_weights(self, weights: str, load_decoder=True):
         state_dict = load_url(weights)
         new_dict = {}
         for k, v in state_dict.items():
             if "unet" in k and "encode" in k:
                 new_key = k.replace("model.", "")
                 new_dict[new_key] = v
+
+            if load_decoder:
+                if "decode" in k:
+                    new_key = k.replace("model.", "")
+                    new_dict[new_key] = v
 
         self.load_state_dict(new_dict, strict=False)
 

@@ -17,9 +17,10 @@ classifiers = [
 ]
 keywords = ["moonshine", "remote", "sensing", "satellite"]
 license = {text = "MIT"}
-dependencies = [
-    "torch",
-]
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 
 [project.urls]
 Homepage = "https://github.com/moonshinelabs/moonshine"
