@@ -2,7 +2,7 @@
 Pretrained remote sensing models for the rest of us.
 
 ### What is Moonshine?
-Moonshine is a software package that makes it easier to train models on remote sensing data like satellite imagery. Using Moonshine's pretrained foundation models, you can reduce the amount of labeled data required for your tasks by 90% or more.
+Moonshine is a software package that makes it easier to train models on remote sensing data like satellite imagery. Using Moonshine's pretrained foundation models, you can reduce the amount of labeled data required and reduce the training compute needed.
 
 ### Getting Started
 The Moonshine Python package offers a light wrapper around our pretrained PyTorch models.
