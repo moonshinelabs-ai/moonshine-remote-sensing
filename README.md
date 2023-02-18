@@ -25,7 +25,7 @@ pip install git+https://github.com/moonshinelabs-ai/moonshine
 The Moonshine Python package offers a light wrapper around our pretrained PyTorch models. You can load the pretrained weights into your own model architecture and fine tune with your own data:
 
 ```python
-import pytorch.nn as nn
+import torch.nn as nn
 from moonshine.models.unet import UNet
 
 class CloudSegmentation(nn.Module):

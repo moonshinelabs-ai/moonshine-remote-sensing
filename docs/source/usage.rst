@@ -30,7 +30,7 @@ own model architecture and fine tune with your own data:
 
 .. code:: python
 
-   import pytorch.nn as nn
+   import torch.nn as nn
    from moonshine.models.unet import UNet
 
    class CloudSegmentation(nn.Module):
