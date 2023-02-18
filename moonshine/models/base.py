@@ -1,3 +1,4 @@
+"""The ABC for Moonshine models."""
 import abc
 import logging
 from json import decoder
@@ -15,6 +16,11 @@ class MoonshineModel(nn.Module, abc.ABC):
     """The base class of all Moonshine released models."""
 
     def __init__(self, name: str):
+        """Create the moonshine base model.
+
+        Args:
+            name: A valid name for the architecture of this model.
+        """
         super().__init__()
 
         self.name = name
@@ -47,6 +53,13 @@ class MoonshineModel(nn.Module, abc.ABC):
         encoder_weights: Optional[str],
         decoder_weights: Optional[str],
     ):
+        """Load external weights for this model. Can be either a path or a
+        named set.
+
+        Args:
+            encoder_weights: Either a path to .pt weights or a valid model name. If None, will not load encoder weights.
+            decoder_weights: Either a path to .pt weights or a valid model name. If None, will not load decoder weights.
+        """
         if not encoder_weights and not decoder_weights:
             raise ValueError(
                 "Didn't get any weights at all, need either encoder or decoder."

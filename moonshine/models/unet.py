@@ -1,4 +1,6 @@
 from json import encoder
+
+"""UNet models for segmentation and classification."""
 from typing import Optional, Sequence
 
 import segmentation_models_pytorch as smp
@@ -8,6 +10,9 @@ from .model_parameters import model_params
 
 
 class UNet(MoonshineModel):
+    """A basic UNet model, implemented under the hood with segmentation-models-
+    pytorch."""
+
     def _build_model(self) -> smp.Unet:
         assert self.name in model_params.keys(), "Unsupported model type."
 
@@ -28,8 +33,14 @@ class UNet(MoonshineModel):
         self,
         name,
     ):
+        """Create the UNet, without loading the weights.
+
+        Args:
+            name: A valid name for the architecture of this model.
+        """
         super().__init__(name=name)
         self.unet = self._build_model()
 
     def forward(self, x):
+        """Run the forward pass of this model."""
         return self.unet(x)

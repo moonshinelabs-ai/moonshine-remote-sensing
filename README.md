@@ -1,8 +1,12 @@
 # Moonshine
 Pretrained remote sensing models for the rest of us.
 
+[![Documentation Status](https://readthedocs.org/projects/moonshineai/badge/?version=latest)](https://moonshineai.readthedocs.io/en/latest/?badge=latest)
+
 ### What is Moonshine?
 Moonshine is a software package that makes it easier to train models on remote sensing data like satellite imagery. Using Moonshine's pretrained foundation models, you can reduce the amount of labeled data required and reduce the training compute needed.
+
+For more info and examples, [read the docs]().
 
 ### Installation
 PyPI version:
@@ -17,7 +21,6 @@ Latest version from source:
 pip install git+https://github.com/moonshinelabs-ai/moonshine
 ```
 
-
 ### Quick Start
 The Moonshine Python package offers a light wrapper around our pretrained PyTorch models. You can load the pretrained weights into your own model architecture and fine tune with your own data:
 
@@ -28,9 +31,9 @@ from moonshine.models.unet import UNet
 def CloudSegmentation(nn.Module):
     def __init__(self):
         # Create a blank model based on the available architectures.
-        self.backbone = UNet(name="resnet50_rgb")
+        self.backbone = UNet(name="unet50_fmow_rgb")
         # Load both encoder and decoder weights. Some networks will want to not load the decoder.
-        self.backbone.load_weights(encoder_weights="resnet50_rgb", decoder_weights="resnet50_rgb")
+        self.backbone.load_weights(encoder_weights="unet50_fmow_rgb", decoder_weights="unet50_fmow_rgb")
         # Run a per-pixel classifier on top of the output vectors.
         self.classifier = nn.Dense(2)
 
@@ -44,10 +47,8 @@ You can also configure data pre-processing to make sure your data is formatted t
 
 ```python
 from moonshine.preprocessing import get_preprocessing_fn
-preprocess_fn = get_preprocessing_fn(model="unet", data="fmow_rgb")
+preprocess_fn = get_preprocessing_fn(model="unet50", data="fmow_rgb")
 ```
-
-For more info and examples, [read the docs](). Using Moonshine for your academic project? Cite [this webpage]().
 
 ### Citing
 
