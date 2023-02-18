@@ -33,7 +33,7 @@ own model architecture and fine tune with your own data:
    import pytorch.nn as nn
    from moonshine.models.unet import UNet
 
-   def CloudSegmentation(nn.Module):
+   class CloudSegmentation(nn.Module):
       def __init__(self):
          # Create a blank model based on the available architectures.
          self.backbone = UNet(name="unet50_fmow_rgb")

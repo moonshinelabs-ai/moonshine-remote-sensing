@@ -28,7 +28,7 @@ The Moonshine Python package offers a light wrapper around our pretrained PyTorc
 import pytorch.nn as nn
 from moonshine.models.unet import UNet
 
-def CloudSegmentation(nn.Module):
+class CloudSegmentation(nn.Module):
     def __init__(self):
         # Create a blank model based on the available architectures.
         self.backbone = UNet(name="unet50_fmow_rgb")
