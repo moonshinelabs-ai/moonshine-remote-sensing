@@ -30,11 +30,11 @@ class MoonshineModel(nn.Module, abc.ABC):
         self, encoder_weights: Optional[str], decoder_weights: Optional[str]
     ):
         new_dict = {}
-        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        device = "cuda" if torch.cuda.is_available() else "cpu"
 
         # Load the encoder weights
         if encoder_weights:
-            state_dict = load_url(encoder_weights,  map_location=torch.device(device))
+            state_dict = load_url(encoder_weights, map_location=torch.device(device))
             for k, v in state_dict.items():
                 if "unet" in k and "encode" in k:
                     new_key = k.replace("model.", "")
@@ -42,7 +42,7 @@ class MoonshineModel(nn.Module, abc.ABC):
 
         # Load the decoder weights
         if decoder_weights:
-            state_dict = load_url(decoder_weights,  map_location=torch.device(device))
+            state_dict = load_url(decoder_weights, map_location=torch.device(device))
             for k, v in state_dict.items():
                 if "unet" in k and "decode" in k:
                     new_key = k.replace("model.", "")
