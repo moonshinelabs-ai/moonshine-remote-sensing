@@ -12,12 +12,12 @@ Currently we support both pre-built models, as well as weights
 pretrained on specific datasets. We will release more combinations over
 time.
 
-----
-UNet
-----
+******
+ UNet
+******
 
 ``resnet50_fmow_rgb``: A UNet with a ResNet-50 backbone that has been
-pretrained on the `functional map of the world RGB
-dataset <https://github.com/fMoW/dataset>`_. The model was trained using
-masked autoencoding self-supervised learning, meaning that it should be
-more task agnostic than a model pretrained on a specific target task.
+pretrained on the `functional map of the world RGB dataset
+<https://github.com/fMoW/dataset>`_. The model was trained using masked
+autoencoding self-supervised learning, meaning that it should be more
+task agnostic than a model pretrained on a specific target task.

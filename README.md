@@ -28,19 +28,22 @@ The Moonshine Python package offers a light wrapper around our pretrained PyTorc
 import torch.nn as nn
 from moonshine.models.unet import UNet
 
-class CloudSegmentation(nn.Module):
+class SegmentationModel(nn.Module):
     def __init__(self):
+        super().__init__()
+
         # Create a blank model based on the available architectures.
         self.backbone = UNet(name="unet50_fmow_rgb")
         # Load both encoder and decoder weights. Some networks will want to not load the decoder.
-        self.backbone.load_weights(encoder_weights="unet50_fmow_rgb", decoder_weights="unet50_fmow_rgb")
+        self.backbone.load_weights(
+            encoder_weights="unet50_fmow_rgb", decoder_weights="unet50_fmow_rgb"
+        )
         # Run a per-pixel classifier on top of the output vectors.
-        self.classifier = nn.Dense(2)
+        self.classifier = nn.Conv2d(32, 2, (1, 1))
 
     def forward(self, x):
         x = self.backbone(x)
-        x = self.classifier(x)
-        return nn.softmax(x)
+        return self.classifier(x)
 ```
 
 You can also configure data pre-processing to make sure your data is formatted the same way as the model pretraining was done.
