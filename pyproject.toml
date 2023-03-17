@@ -17,7 +17,7 @@ classifiers = [
 ]
 keywords = ["moonshine", "remote", "sensing", "satellite"]
 license = {text = "MIT"}
-dependencies = ["segmentation-models-pytorch==0.3.2"]
+dependencies = ["segmentation-models-pytorch==0.3.2", "smart_open[aws]==6.3.0"]
 
 [project.urls]
 Homepage = "https://github.com/moonshinelabs/moonshine"

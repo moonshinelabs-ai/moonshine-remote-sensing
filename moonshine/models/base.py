@@ -1,15 +1,17 @@
 """The ABC for Moonshine models."""
 import abc
+import io
 import logging
 from json import decoder
-from typing import Optional
-
-logger = logging.getLogger("moonshine")
+from multiprocessing.sharedctypes import Value
+from typing import Any, Optional
 
 import torch
 import torch.nn as nn
+from smart_open import open
 from torch.utils.model_zoo import load_url
 
+from .logging import logger
 from .model_parameters import model_params
 
 
@@ -26,15 +28,23 @@ class MoonshineModel(nn.Module, abc.ABC):
 
         self.name = name
 
+    def _download_state_dict(self, location: str) -> dict[str, Any]:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+
+        if "s3://" in location:
+            with open(location, "rb") as f:
+                buffer = io.BytesIO(f.read())
+                return torch.load(buffer)
+        else:
+            return load_url(location, map_location=torch.device(device))
+
     def _load_state(
         self, encoder_weights: Optional[str], decoder_weights: Optional[str]
     ):
         new_dict = {}
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-
         # Load the encoder weights
         if encoder_weights:
-            state_dict = load_url(encoder_weights, map_location=torch.device(device))
+            state_dict = self._download_state_dict(encoder_weights)
             for k, v in state_dict.items():
                 if "unet" in k and "encode" in k:
                     new_key = k.replace("model.", "")
@@ -42,7 +52,7 @@ class MoonshineModel(nn.Module, abc.ABC):
 
         # Load the decoder weights
         if decoder_weights:
-            state_dict = load_url(decoder_weights, map_location=torch.device(device))
+            state_dict = self._download_state_dict(decoder_weights)
             for k, v in state_dict.items():
                 if "unet" in k and "decode" in k:
                     new_key = k.replace("model.", "")

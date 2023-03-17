@@ -12,6 +12,11 @@ def get_dataset_settings(dataset: str) -> DatasetSettings:
             mean=np.array([0.485, 0.456, 0.406]),
             std=np.array([0.229, 0.224, 0.225]),
         )
+    elif dataset == "fmow_full":
+        return DatasetSettings(
+            mean=np.array([349.23, 339.76, 378.58, 418.42, 275.86, 431.82, 495.65, 435.05]),
+            std=np.array([78.67, 105.54, 142.05, 177.00, 132.29, 151.65, 194.00, 166.27]),
+        )
     else:
         raise ValueError("Invalid dataset type.")
 
