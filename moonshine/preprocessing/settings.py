@@ -11,4 +11,4 @@ class DatasetSettings(object):
 
 @dataclasses.dataclass
 class ModelSettings(object):
-    colorspace: str
+    name: str

@@ -27,7 +27,7 @@ def get_dataset_settings(dataset: str) -> DatasetSettings:
 
 def get_model_settings(model: str) -> ModelSettings:
     if model == "unet":
-        return ModelSettings(colorspace="rgb")
+        return ModelSettings(name="unet")
     else:
         raise ValueError("Invalid dataset type.")
 
@@ -35,9 +35,6 @@ def get_model_settings(model: str) -> ModelSettings:
 def _preprocess_fn(
     x: np.ndarray, model: ModelSettings, dataset: DatasetSettings
 ) -> np.ndarray:
-    if model.colorspace == "bgr":
-        x = x[..., ::-1].copy()
-
     if dataset.mean is not None:
         x = x - dataset.mean
 

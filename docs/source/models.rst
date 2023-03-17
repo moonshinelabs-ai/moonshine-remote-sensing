@@ -16,8 +16,31 @@ time.
  UNet
 ******
 
-``resnet50_fmow_rgb``: A UNet with a ResNet-50 backbone that has been
-pretrained on the `functional map of the world RGB dataset
+resnet50_fmow_rgb
+=================
+
+A UNet with a ResNet-50 backbone that has been pretrained on the
+`functional map of the world RGB dataset
 <https://github.com/fMoW/dataset>`_. The model was trained using masked
 autoencoding self-supervised learning, meaning that it should be more
 task agnostic than a model pretrained on a specific target task.
+
+To pre-process data, use `fmow_rgb` mode. This mode expects input values
+from 0..255 in RGB format.
+
+resnet50_fmow_full
+==================
+
+A UNet with a ResNet-50 backbone that has been pretrained on the
+`functional map of the world full dataset
+<https://github.com/fMoW/dataset>`_. The model was trained using masked
+autoencoding self-supervised learning, meaning that it should be more
+task agnostic than a model pretrained on a specific target task.
+Compared to the `resnet50_fmow_rgb` dataset, this dataset uses the
+multispectral inputs in either 4 or 8 channel format. The model has been
+trained to deal with the latter 4 missing channels for images that do
+not have 8 channels of data.
+
+To pre-process data, use `fmow_full` mode. This mode expects input
+values from 0..65535, as the default in the functional map of the world
+dataset.
