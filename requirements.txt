@@ -1,2 +1,2 @@
 segmentation-models-pytorch==0.3.2
-smart_open[aws]==0.6.3
+smart_open[s3]==6.3.0

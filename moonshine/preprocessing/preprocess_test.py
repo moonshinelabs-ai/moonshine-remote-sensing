@@ -17,6 +17,17 @@ class TestPreprocess(unittest.TestCase):
         processed = fn(data)
         self.assertAlmostEqual(processed.sum(), 2937294.901659388 / 8)
 
+    def test_preprocess_fn_full(self):
+        fn = get_preprocessing_fn("unet", "fmow_full")
+
+        data = np.ones((8, 224, 224, 8))
+        processed = fn(data)
+        self.assertAlmostEqual(processed.sum(), -9124595.297783388)
+
+        data = np.ones((1, 224, 224, 8))
+        processed = fn(data)
+        self.assertAlmostEqual(processed.sum(), -9124595.297783388 / 8)
+
 
 if __name__ == "__main__":
     unittest.main()
