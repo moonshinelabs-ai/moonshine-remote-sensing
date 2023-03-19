@@ -19,7 +19,12 @@ time.
 resnet50_fmow_rgb
 =================
 
-A UNet with a ResNet-50 backbone that has been pretrained on the
+**Architecture**: UNet
+**Backbone**: ResNet-50
+**Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3
+**Data Format**: RGB
+
+A UNet that has been pretrained on the
 `functional map of the world RGB dataset
 <https://github.com/fMoW/dataset>`_. The model was trained using masked
 autoencoding self-supervised learning, meaning that it should be more
@@ -31,7 +36,12 @@ from 0..255 in RGB format.
 resnet50_fmow_full
 ==================
 
-A UNet with a ResNet-50 backbone that has been pretrained on the
+**Architecture**: UNet
+**Backbone**: ResNet-50
+**Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3
+**Data Format**: 4 or 8 channel multispectral
+
+A UNet that has been pretrained on the
 `functional map of the world full dataset
 <https://github.com/fMoW/dataset>`_. The model was trained using masked
 autoencoding self-supervised learning, meaning that it should be more

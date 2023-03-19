@@ -35,6 +35,7 @@ class SegmentationModel(nn.Module):
         # Create a blank model based on the available architectures.
         self.backbone = UNet(name="unet50_fmow_rgb")
         # Load both encoder and decoder weights. Some networks will want to not load the decoder.
+        # To train from scratch just leave this off.
         self.backbone.load_weights(
             encoder_weights="unet50_fmow_rgb", decoder_weights="unet50_fmow_rgb"
         )
@@ -50,7 +51,7 @@ You can also configure data pre-processing to make sure your data is formatted t
 
 ```python
 from moonshine.preprocessing import get_preprocessing_fn
-preprocess_fn = get_preprocessing_fn(model="unet50", data="fmow_rgb")
+preprocess_fn = get_preprocessing_fn(model="unet", dataset="fmow_rgb")
 ```
 
 ### Citing

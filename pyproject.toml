@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "moonshine"
-version = "0.1.3"
+version = "0.1.5"
 authors = [
     {name = "Nate Harada", email = "moonshine@moonshinelabs.ai"},
 ]
@@ -17,7 +17,7 @@ classifiers = [
 ]
 keywords = ["moonshine", "remote", "sensing", "satellite"]
 license = {text = "MIT"}
-dependencies = ["segmentation-models-pytorch==0.3.2", "smart_open[aws]==6.3.0"]
+dependencies = ["segmentation-models-pytorch==0.3.2", "smart_open[s3]==6.3.0"]
 
 [project.urls]
 Homepage = "https://github.com/moonshinelabs/moonshine"
