@@ -19,16 +19,15 @@ time.
 resnet50_fmow_rgb
 =================
 
-| **Architecture**: UNet
-| **Backbone**: ResNet-50
-| **Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3
-| **Data Format**: RGB
+|  **Architecture**: UNet
+|  **Backbone**: ResNet-50
+|  **Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3
+|  **Data Format**: RGB
 
-A UNet that has been pretrained on the
-`functional map of the world RGB dataset
-<https://github.com/fMoW/dataset>`_. The model was trained using masked
-autoencoding self-supervised learning, meaning that it should be more
-task agnostic than a model pretrained on a specific target task.
+A UNet that has been pretrained on the `functional map of the world RGB
+dataset <https://github.com/fMoW/dataset>`_. The model was trained using
+masked autoencoding self-supervised learning, meaning that it should be
+more task agnostic than a model pretrained on a specific target task.
 
 To pre-process data, use `fmow_rgb` mode. This mode expects input values
 from 0..255 in RGB format.
@@ -36,16 +35,15 @@ from 0..255 in RGB format.
 resnet50_fmow_full
 ==================
 
-| **Architecture**: UNet
-| **Backbone**: ResNet-50
-| **Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3
-| **Data Format**: 4 or 8 channel multispectral
+|  **Architecture**: UNet
+|  **Backbone**: ResNet-50
+|  **Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3
+|  **Data Format**: 4 or 8 channel multispectral
 
-A UNet that has been pretrained on the
-`functional map of the world full dataset
-<https://github.com/fMoW/dataset>`_. The model was trained using masked
-autoencoding self-supervised learning, meaning that it should be more
-task agnostic than a model pretrained on a specific target task.
+A UNet that has been pretrained on the `functional map of the world full
+dataset <https://github.com/fMoW/dataset>`_. The model was trained using
+masked autoencoding self-supervised learning, meaning that it should be
+more task agnostic than a model pretrained on a specific target task.
 Compared to the `resnet50_fmow_rgb` dataset, this dataset uses the
 multispectral inputs in either 4 or 8 channel format. The model has been
 trained to deal with the latter 4 missing channels for images that do
