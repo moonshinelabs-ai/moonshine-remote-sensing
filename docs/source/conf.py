@@ -1,3 +1,4 @@
+# type: ignore
 # Configuration file for the Sphinx documentation builder.
 
 # -- For some crazy reason this is a requirement to import the package
