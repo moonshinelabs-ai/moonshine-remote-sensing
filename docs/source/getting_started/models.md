@@ -14,10 +14,10 @@ time.
 
 ### resnet50_fmow_rgb
 
-**Architecture**: UNet  
-**Backbone**: ResNet-50  
-**Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3  
-**Data Format**: RGB  
+**Architecture**: UNet\
+**Backbone**: ResNet-50\
+**Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3\
+**Data Format**: RGB
 
 A UNet that has been pretrained on the [functional map of the world RGB
 dataset](https://github.com/fMoW/dataset). The model was trained using
@@ -29,10 +29,10 @@ from 0..255 in RGB format.
 
 ### resnet50_fmow_full
 
-**Architecture**: UNet  
-**Backbone**: ResNet-50  
-**Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3  
-**Data Format**: 4 or 8 channel multispectral  
+**Architecture**: UNet\
+**Backbone**: ResNet-50\
+**Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3\
+**Data Format**: 4 or 8 channel multispectral
 
 A UNet that has been pretrained on the [functional map of the world RGB
 dataset](https://github.com/fMoW/dataset). The model was trained using

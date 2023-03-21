@@ -23,6 +23,7 @@ including how to install the library.
 
    getting_started/quick_start.md
    getting_started/models.md
+   getting_started/preprocessing.md
 
 .. toctree::
    :hidden:

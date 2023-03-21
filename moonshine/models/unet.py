@@ -10,8 +10,7 @@ from .model_parameters import model_params
 
 
 class UNet(MoonshineModel):
-    """A basic UNet model, implemented under the hood with segmentation-models-
-    pytorch."""
+    """A basic UNet model, implemented under the hood with segmentation-models-pytorch. The model uses a ResNet backbone and skip connections, as in the original paper at https://arxiv.org/abs/1505.04597. Some parameters are fixed, since pre-trained weights require a consistant network structure."""
 
     def _build_model(self) -> smp.Unet:
         assert self.name in model_params.keys(), "Unsupported model type."

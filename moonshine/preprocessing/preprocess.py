@@ -45,7 +45,7 @@ def _preprocess_fn(
 
 
 def get_preprocessing_fn(model: str, dataset: str) -> Callable:
-    """Get a preprocessing function for a given model and dataset.
+    """Get a preprocessing function for a given model and dataset. For a full list of preprocessing functions available, see the documentation.
 
     Args:
         model: Which type of model to preprocess for, e.g. unet.
