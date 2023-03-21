@@ -35,12 +35,12 @@
 </p>
 <br />
 
-### What is Moonshine?
-Moonshine is a software package that makes it easier to train models on remote sensing data like satellite imagery. Using Moonshine's pretrained models, you can reduce the amount of labeled data required and reduce the training compute needed.
+## What is Moonshine?
+Moonshine is a Python package that makes it easier to train models on remote sensing data like satellite imagery. Using Moonshine's pretrained models, you can reduce the amount of labeled data required and reduce the training compute needed.
 
 For more info and examples, [read the docs](https://moonshineai.readthedocs.io/en/latest).
 
-### Installation
+## Installation
 PyPI version:
 
 ```sh
@@ -53,7 +53,7 @@ Latest version from source:
 pip install git+https://github.com/moonshinelabs-ai/moonshine
 ```
 
-### Quick Start
+## Quick Start
 The Moonshine Python package offers a light wrapper around our pretrained PyTorch models. You can load the pretrained weights into your own model architecture and fine tune with your own data:
 
 ```python
@@ -88,7 +88,7 @@ from moonshine.preprocessing import get_preprocessing_fn
 preprocess_fn = get_preprocessing_fn(model="unet", dataset="fmow_rgb")
 ```
 
-### Citing
+## Citing
 
 ```
 @misc{Harada:2023,
@@ -101,6 +101,6 @@ preprocess_fn = get_preprocessing_fn(model="unet", dataset="fmow_rgb")
 }
 ```
 
-### License
+## License
 
 This project is under MIT License.

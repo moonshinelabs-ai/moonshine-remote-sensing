@@ -21,24 +21,24 @@ release = "0.1.5"
 version = "0.1.5"
 
 # -- Theme options
-html_static_path = ['_static']
-html_title = ' Moonshine'
+html_static_path = ["_static"]
+html_title = " Moonshine"
 
 # Customize CSS
-html_css_files = ['css/custom.css']
+html_css_files = ["css/custom.css"]
 
 # -- Options for HTML output
 html_theme = "furo"
 html_theme_options = {
-    'light_logo': 'logo-light-mode.png',
-    'dark_logo': 'logo-light-mode.png',
-    'light_css_variables': {
-        'color-brand-primary': '#373737',
-        'color-brand-content': '#373737',
+    "light_logo": "logo-light-mode.png",
+    "dark_logo": "logo-light-mode.png",
+    "light_css_variables": {
+        "color-brand-primary": "#373737",
+        "color-brand-content": "#373737",
     },
-    'dark_css_variables': {
-        'color-brand-primary': '#f9f9f9',
-        'color-brand-content': '#f9f9f9',
+    "dark_css_variables": {
+        "color-brand-primary": "#f9f9f9",
+        "color-brand-content": "#f9f9f9",
     },
 }
 
@@ -52,14 +52,14 @@ extensions = [
     "myst_parser",
     "nbsphinx",
 ]
-exclude_patterns = ['_build', '**.ipynb_checkpoints']
+exclude_patterns = ["_build", "**.ipynb_checkpoints"]
 
-pygments_style = 'manni'
-pygments_dark_style = 'monokai'
+pygments_style = "manni"
+pygments_dark_style = "monokai"
 
 autosummary_generate = True
 
-nbsphinx_execute = 'never'
+nbsphinx_execute = "never"
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
@@ -68,8 +68,8 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ["std"]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-source_suffix = ['.rst', '.md']
+templates_path = ["_templates"]
+source_suffix = [".rst", ".md"]
 
 # -- Options for EPUB output
 epub_show_urls = "footnote"

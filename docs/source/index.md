@@ -12,7 +12,7 @@ The above chart shows the difference between training the functional map
 of the world classification task using our pre-trained model vs.
 training from scratch. Training from scratch both performs worse
 overall, and for the same level of accuracy we can train for 50% less
-time. Check out the [quick_start](getting_started/quick_start.md) section for further information,
+time. Check out the [quick start](getting_started/quick_start.md) section for further information,
 including how to install the library.
 
 ```{eval-rst}
