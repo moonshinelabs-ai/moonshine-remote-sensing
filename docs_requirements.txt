@@ -36,7 +36,6 @@ matplotlib-inline==0.1.6
 mdit-py-plugins==0.3.5
 mdurl==0.1.2
 mistune==2.0.5
--e git+ssh://git@github.com/nharada1/moonshine.git@ed2724a63ca841829cab6f24d8f96afaadd1bd83#egg=moonshine&subdirectory=src/public/moonshine
 mpmath==1.3.0
 munch==2.5.0
 myst-parser==1.0.0
