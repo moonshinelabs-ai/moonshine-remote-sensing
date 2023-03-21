@@ -1,6 +1,4 @@
-##################
- Available Models
-##################
+# Available Models
 
 While the list of available models is currently small, we intend to add
 more over the coming months, especially with feedback from our users.
@@ -12,36 +10,32 @@ Currently we support both pre-built models, as well as weights
 pretrained on specific datasets. We will release more combinations over
 time.
 
-******
- UNet
-******
+## UNet
 
-resnet50_fmow_rgb
-=================
+### resnet50_fmow_rgb
 
-|  **Architecture**: UNet
-|  **Backbone**: ResNet-50
-|  **Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3
-|  **Data Format**: RGB
+**Architecture**: UNet  
+**Backbone**: ResNet-50  
+**Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3  
+**Data Format**: RGB  
 
-A UNet that has been pretrained on the `functional map of the world RGB
-dataset <https://github.com/fMoW/dataset>`_. The model was trained using
+A UNet that has been pretrained on the [functional map of the world RGB
+dataset](https://github.com/fMoW/dataset). The model was trained using
 masked autoencoding self-supervised learning, meaning that it should be
 more task agnostic than a model pretrained on a specific target task.
 
 To pre-process data, use `fmow_rgb` mode. This mode expects input values
 from 0..255 in RGB format.
 
-resnet50_fmow_full
-==================
+### resnet50_fmow_full
 
-|  **Architecture**: UNet
-|  **Backbone**: ResNet-50
-|  **Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3
-|  **Data Format**: 4 or 8 channel multispectral
+**Architecture**: UNet  
+**Backbone**: ResNet-50  
+**Data Source**: QuickBird-2, GeoEye-1, WorldView-2, WorldView3  
+**Data Format**: 4 or 8 channel multispectral  
 
-A UNet that has been pretrained on the `functional map of the world full
-dataset <https://github.com/fMoW/dataset>`_. The model was trained using
+A UNet that has been pretrained on the [functional map of the world RGB
+dataset](https://github.com/fMoW/dataset). The model was trained using
 masked autoencoding self-supervised learning, meaning that it should be
 more task agnostic than a model pretrained on a specific target task.
 Compared to the `resnet50_fmow_rgb` dataset, this dataset uses the

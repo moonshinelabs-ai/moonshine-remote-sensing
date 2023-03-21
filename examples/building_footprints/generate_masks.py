@@ -16,7 +16,7 @@ def main(args):
     # Process code for paralleization
     def process_file(file):
         # Get the filename for the mask data
-        mask_path = os.path.join(data_path, "testmask")
+        mask_path = os.path.join(data_path, "mask")
         filename = os.path.basename(file)
         keyname = filename.split(".")[0]
         label_name = keyname.replace("8band_", "Mask_") + ".npy"
@@ -35,7 +35,7 @@ def main(args):
 
         np.save(write_path, mask)
 
-    mask_path = os.path.join(data_path, "testmask")
+    mask_path = os.path.join(data_path, "mask")
     if not os.path.exists(mask_path):
         os.makedirs(mask_path)
 
