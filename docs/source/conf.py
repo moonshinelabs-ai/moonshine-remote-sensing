@@ -12,7 +12,6 @@ project_root = os.path.abspath("../..")
 print("Running doc generation, project root at {}".format(project_root))
 
 # -- Project information
-
 project = "Moonshine"
 copyright = "2023, Moonshine Labs"
 author = "Moonshine Labs"
@@ -23,6 +22,9 @@ version = "0.1.5"
 # -- Theme options
 html_static_path = ["_static"]
 html_title = " Moonshine"
+
+# Favicon
+html_favicon = "https://moonshine-assets.s3.us-west-2.amazonaws.com/favicon.ico"
 
 # Customize CSS
 html_css_files = ["css/custom.css"]
