@@ -8,14 +8,14 @@
 <h2><p align="center">Pretrained remote sensing models for the rest of us.</p></h2>
 
 <h4><p align='center'>
-- <a href="">[Getting Started]</a>
-- <a href="">[Docs]
-<a href="https://http://www.moonshinelabs.ai/">[Website]</a>
+<a href="https://moonshineai.readthedocs.io/en/latest/getting_started/quick_start.html">[Getting Started]</a>
+- <a href="https://moonshineai.readthedocs.io/en/latest/">[Docs]</a>
+- <a href="http://www.moonshinelabs.ai/">[Website]</a>
 </p></h4>
 
 <p align="center">
-    <a href="https://readthedocs.org/projects/moonshineai/badge/?version=latest">
-        <img alt="Documentation" src="https://moonshineai.readthedocs.io/en/latest/?badge=latest">
+    <a href="https://moonshineai.readthedocs.io/en/latest/">
+        <img alt="Documentation" src="https://readthedocs.org/projects/moonshineai/badge/?version=latest">
     </a>
     <a href="https://pypi.org/project/moonshinelabs-ai/">
         <img alt="PyPi Version" src="https://img.shields.io/pypi/pyversions/moonshine">
@@ -38,7 +38,7 @@
 ### What is Moonshine?
 Moonshine is a software package that makes it easier to train models on remote sensing data like satellite imagery. Using Moonshine's pretrained models, you can reduce the amount of labeled data required and reduce the training compute needed.
 
-For more info and examples, [read the docs](https://moonshineai.readthedocs.io/en/latest/?badge=latest).
+For more info and examples, [read the docs](https://moonshineai.readthedocs.io/en/latest).
 
 ### Installation
 PyPI version:
