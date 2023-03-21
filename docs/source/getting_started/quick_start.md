@@ -16,9 +16,9 @@ $ pip install git+https://github.com/moonshinelabs-ai/moonshine
 
 ## Getting Started
 
-The Moonshine Python package offers a light wrapper around our
-pretrained PyTorch models. You can load the pretrained weights into your
-own model architecture and fine tune with your own data:
+The Moonshine Python package offers a light wrapper around our pretrained PyTorch
+models. You can load the pretrained weights into your own model architecture and fine
+tune with your own data:
 
 ```python
 import torch.nn as nn
@@ -46,8 +46,8 @@ class SegmentationModel(nn.Module):
         return self.classifier(x)
 ```
 
-You can also configure data pre-processing to make sure your data is
-formatted the same way as the model pretraining was done.
+You can also configure data pre-processing to make sure your data is formatted the same
+way as the model pretraining was done.
 
 ```python
 from moonshine.preprocessing import get_preprocessing_fn

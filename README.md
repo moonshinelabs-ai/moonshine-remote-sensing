@@ -8,8 +8,8 @@
 <h2><p align="center">Pretrained remote sensing models for the rest of us.</p></h2>
 
 <h4><p align='center'>
-<a href="https://moonshineai.readthedocs.io/en/latest/getting_started/quick_start.html">[Getting Started]</a>
-- <a href="https://moonshineai.readthedocs.io/en/latest/">[Docs]</a>
+<a href="https://moonshineai.readthedocs.io/en/latest/">[Read The Docs]</a>
+- <a href="https://moonshineai.readthedocs.io/en/latest/getting_started/quick_start.html">[Quick Start]</a>
 - <a href="http://www.moonshinelabs.ai/">[Website]</a>
 </p></h4>
 
