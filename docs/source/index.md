@@ -26,10 +26,11 @@ pretrained weights vs training from scratch:
 
 ![Pretrain your models to save time and compute | width=400](_static/images/pretrain_fmow_compare.png)
 
-The above chart shows the difference between training the [functional map of the world](https://github.com/fMoW/dataset)
-classification task using our pre-trained model vs. training from scratch. The task is
-to classify patches of satellite data by the functional purpose of the land, with 63
-possible classes and over 300,000 training images.
+The above chart shows the difference between training the
+[functional map of the world](https://github.com/fMoW/dataset) classification task using
+our pre-trained model vs. training from scratch. The task is to classify patches of
+satellite data by the functional purpose of the land, with 63 possible classes and over
+300,000 training images.
 
 Training from scratch both performs worse overall, and for roughly the same level of
 accuracy we can train for 45% less time (3.5h vs 2.0h). Check out the
