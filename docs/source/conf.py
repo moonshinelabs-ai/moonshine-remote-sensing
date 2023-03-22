@@ -45,7 +45,7 @@ html_theme_options = {
     "dark_logo": "logo-light-mode.png",
     "light_css_variables": {
         "color-brand-primary": "#373737",
-        "color-brand-content": "#373737",
+        "color-brand-content": "#2926EA",
     },
     "dark_css_variables": {
         "color-brand-primary": "#f9f9f9",
