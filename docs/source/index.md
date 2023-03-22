@@ -33,7 +33,7 @@ satellite data by the functional purpose of the land, with 63 possible classes a
 300,000 training images.
 
 Training from scratch both performs worse overall, and for roughly the same level of
-accuracy we can train for 45% less time (3.5h vs 2.0h). Check out the
+accuracy we can train for 45% less time (28h vs 16h on a V100). Check out the
 [quick start](getting_started/quick_start.md) section for further information, including
 how to install the library.
 
