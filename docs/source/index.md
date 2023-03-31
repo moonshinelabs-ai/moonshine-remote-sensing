@@ -1,7 +1,7 @@
 # Moonshine
 
 **Moonshine** is a Python library that makes it easy for remote sensing researchers,
-professionals, and enthusists to develop ML models on their data. It provides
+professionals, and enthusiasts to develop ML models on their data. It provides
 [pre-trained models](getting_started/models.md) across a variety of
 [datasets](https://moonshineai.readthedocs.io/en/latest/getting_started/preprocessing.html#dataset)
 and architectures, allowing you to reduce your labeling costs and compute requirements

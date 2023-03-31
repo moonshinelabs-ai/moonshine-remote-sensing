@@ -15,7 +15,7 @@ class UNet(MoonshineModel):
 
     The model uses a ResNet backbone and skip connections, as in the
     original paper at https://arxiv.org/abs/1505.04597. Some parameters
-    are fixed, since pre-trained weights require a consistant network
+    are fixed, since pre-trained weights require a consistent network
     structure.
     """
 
