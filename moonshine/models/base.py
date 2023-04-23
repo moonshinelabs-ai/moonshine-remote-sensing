@@ -45,6 +45,8 @@ class MoonshineModel(nn.Module, abc.ABC):
         # Load the encoder weights
         if encoder_weights:
             state_dict = self._download_state_dict(encoder_weights)
+            if "state" in state_dict.keys():
+                state_dict = state_dict["state"]["model"]
             for k, v in state_dict.items():
                 if "unet" in k and "encode" in k:
                     new_key = k.replace("model.", "")
@@ -53,12 +55,15 @@ class MoonshineModel(nn.Module, abc.ABC):
         # Load the decoder weights
         if decoder_weights:
             state_dict = self._download_state_dict(decoder_weights)
+            if "state" in state_dict.keys():
+                state_dict = state_dict["state"]["model"]
             for k, v in state_dict.items():
                 if "unet" in k and "decode" in k:
                     new_key = k.replace("model.", "")
                     new_dict[new_key] = v
 
         self.load_state_dict(new_dict, strict=False)
+        logger.info("Loaded state dict (non-strict).")
 
     def load_weights(
         self,

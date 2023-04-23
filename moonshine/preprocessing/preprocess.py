@@ -21,6 +21,41 @@ def get_dataset_settings(dataset: str) -> DatasetSettings:
                 [78.67, 105.54, 142.05, 177.00, 132.29, 151.65, 194.00, 166.27]
             ),
         )
+    elif dataset == "sentinel2_l2a":
+        return DatasetSettings(
+            mean=np.array(
+                [
+                    813.89,
+                    880.54,
+                    1008.66,
+                    999.99,
+                    1348.53,
+                    2114.77,
+                    2354.44,
+                    2510.22,
+                    2515.54,
+                    2503.66,
+                    1464.76,
+                    952.41,
+                ]
+            ),
+            std=np.array(
+                [
+                    791.33,
+                    897.55,
+                    864.37,
+                    921.77,
+                    915.59,
+                    949.51,
+                    974.26,
+                    1062.73,
+                    976.75,
+                    851.96,
+                    520.31,
+                    452.01,
+                ]
+            ),
+        )
     else:
         raise ValueError("Invalid dataset type.")
 

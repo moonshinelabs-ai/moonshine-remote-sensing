@@ -15,4 +15,11 @@ model_params = {
         "input_channels": 8,
         "output_channels": 32,
     },
+    "unet50_sentinel2_l2a": {
+        "weight_url": "https://moonshine-prod-models.s3.us-west-2.amazonaws.com/moonshine/unet/unet50_ben_allchan_step156500.pt",
+        "encoder": "resnet50",
+        "decoder": (256, 128, 64, 32, 32),
+        "input_channels": 12,
+        "output_channels": 32,
+    },
 }

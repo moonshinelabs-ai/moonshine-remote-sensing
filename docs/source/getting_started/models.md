@@ -14,7 +14,7 @@ datasets. We will release more combinations over time.
 
 | Attribute    | Value                                                   |
 | ------------ | ------------------------------------------------------- |
-| Full Name    | `resnet50_fmow_rgb`                                     |
+| Full Name    | `unet50_fmow_rgb`                                       |
 | Architecture | UNet                                                    |
 | Backbone     | ResNet-50                                               |
 | Data Source  | QuickBird-2, GeoEye-1, WorldView-2, WorldView3          |
@@ -33,7 +33,7 @@ mode expects `uint8` input values from 0 - 255 in RGB ordering.
 
 | Attribute    | Value                                                   |
 | ------------ | ------------------------------------------------------- |
-| Full Name    | `resnet50_fmow_full`                                    |
+| Full Name    | `unet50_fmow_full`                                      |
 | Architecture | UNet                                                    |
 | Backbone     | ResNet-50                                               |
 | Data Source  | QuickBird-2, GeoEye-1, WorldView-2, WorldView3          |
@@ -51,3 +51,22 @@ for images that do not have 8 channels of data.
 To pre-process data, use `fmow_full` mode for the dataset and `unet` for the model. This
 mode expects `uint16` input values from 0 - 65535, as the default in the functional map
 of the world dataset.
+
+### ResNet50 • Sentinel-2 L2A • [View Code](https://github.com/moonshinelabs-ai/moonshine/blob/main/moonshine/models/model_parameters.py#L18)
+
+| Attribute    | Value                                                   |
+| ------------ | ------------------------------------------------------- |
+| Full Name    | `unet50_sentinel2_l2a`                                  |
+| Architecture | UNet                                                    |
+| Backbone     | ResNet-50                                               |
+| Data Source  | Sentinel 2 (L2A)                                        |
+| Data Format  | 12 channel multispectral                                |
+| Pretraining  | [Masked Autoencoding](https://arxiv.org/abs/2111.06377) |
+
+A UNet that has been pretrained on the
+[BigEarthNet dataset](https://bigearth.net/). The model
+was trained using masked autoencoding self-supervised learning, meaning that it should
+be more task agnostic than a model pretrained on a specific target task.
+
+To pre-process data, use `sentinel-l2a` mode for the dataset and `unet` for the model. This
+mode expects `uint16` input values from 0 - 65535, as the default for Sentinel-2 data.
