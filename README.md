@@ -35,7 +35,7 @@
 </p>
 <br />
 
-## What is Moonshine?
+## What is Moonshine Remote Sensing?
 
 Moonshine is a Python package that makes it easier to train models on remote sensing
 data like satellite imagery. Using Moonshine's pretrained models, you can reduce the
@@ -44,7 +44,7 @@ amount of labeled data required and reduce the training compute needed.
 For more info and examples,
 [read the docs](https://moonshineai.readthedocs.io/en/latest).
 
-## Why use Moonshine?
+## Why use Moonshine Remote Sensing?
 
 1. **Pretrained on multispectral data**: Many existing packages are pretrained with
    ImageNet or similar RGB images. Using Moonshine you can unlock the full power of
@@ -74,7 +74,7 @@ pip install git+https://github.com/moonshinelabs-ai/moonshine
 
 ## Quick Start
 
-The Moonshine Python package offers a light wrapper around our pretrained PyTorch
+The Moonshine Remote Sensing Python package offers a light wrapper around our pretrained PyTorch
 models. You can load the pretrained weights into your own model architecture and fine
 tune with your own data:
 
